@@ -26,6 +26,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// new durable queue
+	_, _, err = pubsub.DeclareAndBind(conn, routing.ExchangePerilTopic, "game_logs", "game_logs.*", pubsub.Durable)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	gamelogic.PrintServerHelp()
 	fmt.Println("Connection successful!")
 	fmt.Println("Choose a command:")
