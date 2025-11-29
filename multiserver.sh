@@ -8,7 +8,7 @@ fi
 
 num_instances=$1
 
-# Array to store process IDs
+# Array to store process IDs streak
 declare -a pids
 
 # Function to kill all processes when Ctrl+C is pressed
@@ -24,7 +24,7 @@ cleanup() {
 trap 'cleanup' SIGINT
 
 # Start the specified number of instances of the program in the background
-for (( i=0; i<num_instances; i++ )); do
+for ((i = 0; i < num_instances; i++)); do
   go run ./cmd/server &
   pids+=($!)
 done
