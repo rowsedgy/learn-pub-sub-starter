@@ -8,7 +8,7 @@ fi
 
 num_instances=$1
 
-# Array to store process IDs streak
+# Array to store process IDs streak streak2
 declare -a pids
 
 # Function to kill all processes when Ctrl+C is pressed
